@@ -1,4 +1,4 @@
-Make minicomputer (HITAC10) with #FPGA
+Make minicomputer (HITAC10) with FPGA
 
 <Tape reader function>
 1. This unit has a tape reader function attached to the HITAC10 main unit.
@@ -12,8 +12,8 @@ Make minicomputer (HITAC10) with #FPGA
 3. The tape reader reads the tape data and sends it to the main unit.
 4.When reading of OML is completed, reading of extension mechanism software is started.
 5. When reading is completed, jump to PC = 0x20 and start reading MASS tape.
-�� This part is a manual operation originally, a function not found in HITAC10.
-�� 6, After reading the first block of the MASS tape, jump to PC = 0x180.
+※ This part is a manual operation originally, a function not found in HITAC10.
+後 6, After reading the first block of the MASS tape, jump to PC = 0x180.
 7. Looping waiting for an interrupt from the tape reader.
 
 See below for details
@@ -21,23 +21,23 @@ See below for details
 
 <BR>
 
-�e�o�f�`�Ń~�j�R���i�g�h�s�`�b�P�O�j�����
+ＦＰＧＡでミニコン（ＨＩＴＡＣ１０）を作る
 
-�@<�e�[�v���[�_�[�@�\>
-�@1.�{�@��HITAC10�{�̂ɕt�����āA�e�[�v���[�_�[�@�\��L���Ă���B
-�@2.�{�̂���̗v���ɉ����āA�e�[�v���[�_�[�@�\�����삷��B
-�@3.�e�[�v���[�_�[�Ƃ̐ڑ��͊Ȉ�(�Ǝ�)�ڑ��B
-�@4.�e�[�v�f�[�^�[�Ƃ��āA������(12KB)��OML,MASS��A�����Ċi�[���Ă���B
+　<テープリーダー機能>
+　1.本機はHITAC10本体に付随して、テープリーダー機能を有している。
+　2.本体からの要求に応じて、テープリーダー機能が動作する。
+　3.テープリーダーとの接続は簡易(独自)接続。
+　4.テープデーターとして、メモリ(12KB)にOML,MASSを連続して格納している。
 
-�@<���s�X�e�b�v>
-�@1.�{�@�̓��Z�b�g����AIPL���R�A���������ɓ]�����APC=2�Ԓn����IPL�����s����B
-�@2.IPL�̓e�[�v���[�_�[�ɁA�e�[�v(OML)�̓ǂݍ��݂�v������B
-�@3.�e�[�v���[�_�[�̓e�[�v�f�[�^��ǂݎ��A�{�̂ɑ��o����B
-�@4.OML�̓ǂݎ�肪��������ƁA�g���@�\�\�t�g�̓ǂݎ����n�߂�B
-�@5.�ǂݎ�肪��������ƁAPC=0x20�Ԓn�ɃW�����v���AMASS�e�[�v�̓ǂݎ����J�n����B
-�@�@�����̕����͖{���͎蓮����ł���AHITAC10�ɂ͖����@�\�B
-�@6,MASS�e�[�v�̐擪�u���b�N��ǂݎ���APC=0x180�ɃW�����v�B
-�@7.�e�[�v���[�_���̊��荞�ݑ҂��Ń��[�v���Ă���B
+　<実行ステップ>
+　1.本機はリセット直後、IPLをコアメモリ部に転送し、PC=2番地からIPLを実行する。
+　2.IPLはテープリーダーに、テープ(OML)の読み込みを要求する。
+　3.テープリーダーはテープデータを読み取り、本体に送出する。
+　4.OMLの読み取りが完了すると、拡張機構ソフトの読み取りを始める。
+　5.読み取りが完了すると、PC=0x20番地にジャンプし、MASSテープの読み取りを開始する。
+　　※この部分は本来は手動操作であり、HITAC10には無い機能。
+　6,MASSテープの先頭ブロックを読み取り後、PC=0x180にジャンプ。
+　7.テープリーダよりの割り込み待ちでループしている。
 
-�ڂ����͉��L���Q��
-[�m�j�n�g�h�s�`�b�P�O ���a�T�O���N](https://qiita.com/hi631/items/7956a119cf96ed01b6d4)
+詳しくは下記を参照
+[［祝］ＨＩＴＡＣ１０ 生誕５０周年](https://qiita.com/hi631/items/7956a119cf96ed01b6d4)
