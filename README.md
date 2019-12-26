@@ -25,7 +25,7 @@ Make minicomputer (HITAC10) with FPGA
 
 ※ This part is a manual operation originally, a function not found in HITAC10.
 
-後 6, After reading the first block of the MASS tape, jump to PC = 0x180.
+6, After reading the first block of the MASS tape, jump to PC = 0x180.
 
 7. Looping waiting for an interrupt from the tape reader.
 
